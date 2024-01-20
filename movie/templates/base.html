@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        /* Custom Navbar Styling */
+        .navbar {
+            background-color: #343a40; /* Dark background color */
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important; /* White text color */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff; /* White color for the toggler icon */
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff; /* White color for the toggler button border */
+        }
+
+        .navbar-toggler:focus, .navbar-toggler:active {
+            outline: none; /* Remove focus border on toggle button */
+        }
+
+        .navbar-nav .nav-item.active .nav-link {
+            color: #007bff !important; /* Blue color for the active link */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Movies</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Add more navbar items as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %}
+    <!-- Your content goes here -->
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        body {
+            animation: changeColor 5s infinite alternate;
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: #f0f0f0;
+            }
+            100% {
+                background-color: #ffffff;
+            }
+        }
+        
+        /* Additional styling if needed */
+    </style>
+
+    <div class="container mt-5">
+        <div class="row">
+            {% for i in movie_list %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ i.name }}</h5>
+                            <p class="card-text">{{ i.desc }}</p>
+                            <a href="{% url 'movieapp:detail' i.id %}" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
